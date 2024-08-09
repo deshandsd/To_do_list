@@ -27,6 +27,7 @@ todoForm.addEventListener('submit', function(event){
 });
 
 
+
 sectionForm.addEventListener('submit', function(event){
     event.preventDefault();
     
