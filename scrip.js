@@ -1,8 +1,20 @@
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById("todo-input");
-const todoList01 = document.getElementById('todo-list01');
-const todoList02 = document.getElementById('todo-list02');
-const todoList03 = document.getElementById('todo-list03');
+
+
+// const todoList01 = document.getElementById('todo-list00');
+// const todoList02 = document.getElementById('todo-list01');
+// const todoList03 = document.getElementById('todo-list02');
+
+const todoLists = [];
+
+for (let index = 0; index < 3 ; index++) {
+
+    const todolistId  = `todo-list0${index}`;
+    todoLists[index] = document.getElementById(todolistId); 
+}
+
+console.log(todoLists.length);
 
 // const sectionForm = document.getElementById('section-form');
 // const sectionInput = document.getElementById('sectoinInputName');
@@ -125,11 +137,11 @@ function addTask(task,number){
     let todoList;
 
     if(number == "1"){
-        todoList = todoList01;
+        todoList = todoLists[0];
     }else if(number == "2"){
-        todoList = todoList02;
+        todoList = todoLists[1];
     }else if(number == "3"){
-        todoList = todoList03;
+        todoList = todoLists[2];
     }
 
     todoList.appendChild(listItem);
