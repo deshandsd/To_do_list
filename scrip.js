@@ -4,10 +4,10 @@ const todoList01 = document.getElementById('todo-list01');
 const todoList02 = document.getElementById('todo-list02');
 const todoList03 = document.getElementById('todo-list03');
 
-const sectionForm = document.getElementById('section-form');
-const sectionInput = document.getElementById('sectoinInputName');
-const sectionDiv = document.getElementById('divsection');
-const taskSection = document.getElementById('taskSection');
+// const sectionForm = document.getElementById('section-form');
+// const sectionInput = document.getElementById('sectoinInputName');
+// const sectionDiv = document.getElementById('divsection');
+// const taskSection = document.getElementById('taskSection');
 
 todoForm.addEventListener('submit', function(event){
     event.preventDefault() // prevent refreshing the form after submitting
@@ -28,39 +28,37 @@ todoForm.addEventListener('submit', function(event){
 
 
 
-sectionForm.addEventListener('submit', function(event){
-    event.preventDefault();
+// sectionForm.addEventListener('submit', function(event){
+//     event.preventDefault();
     
-    const sectionName =  sectionInput.value;
+//     const sectionName =  sectionInput.value;
 
-    if (sectionName == ''){
-        alert('Please enter a section name');
-        return;  
-    }
-    sectionInput.value = '';
+//     if (sectionName == ''){
+//         alert('Please enter a section name');
+//         return;  
+//     }
+//     sectionInput.value = '';
     
-    AddSection(sectionName);
+//     AddSection(sectionName);
 
-});
+// });
 
-function AddSection(name){
-    console.log(name);
+// function AddSection(name){
+//     console.log(name);
 
-    let sectionCount = 3;
+//     let sectionCount = 3;
 
-    const newSectionId = `${sectionCount}`;
-    sectionCount++;
+//     const newSectionId = `${sectionCount}`;
+//     sectionCount++;                                                 new fuction to add new div section to add tasks
     
-    const newoption = document.createElement('option');
-    newoption.textContent = name;
-    newoption.value = newSectionId;
-    taskSection.appendChild(newoption);
+//     const newoption = document.createElement('option');
+//     newoption.textContent = name;
+//     newoption.value = newSectionId;
+//     taskSection.appendChild(newoption);
 
 
-    const newSection = document.createElement('div');
-    sectionDiv.appendChild(newSection);
-
-};
+//     const newSection = document.createElement('div');
+//     sectionDiv.appendChild(newSection); 
 
 
 
@@ -103,6 +101,8 @@ function addTask(task,number){
     checkbox.addEventListener('change', () => {
     if(checkbox.checked){
         taskText.style.textDecoration = 'line-through';
+        //listItem.remove();
+        //todoList.appendChild(listItem);  list done items in end of the list
     }
     else{
         taskText.style.textDecoration = 'none';
