@@ -113,8 +113,8 @@ function addTask(task,number){
     checkbox.addEventListener('change', () => {
     if(checkbox.checked){
         taskText.style.textDecoration = 'line-through';
-        //listItem.remove();
-        //todoList.appendChild(listItem);  list done items in end of the list
+        listItem.remove();
+        todoList.appendChild(listItem);  //list done items in end of the list
     }
     else{
         taskText.style.textDecoration = 'none';

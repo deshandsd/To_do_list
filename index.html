@@ -10,11 +10,11 @@
 <div id="todo-app">
     <h1>To-Do list</h1>
     <form action="" id="todo-form">
-        <input type="text" id="todo-input" placeholder="Add a new task">
-        <select name="taskSection" id="taskSection">
-            <option value="1">option01</option>
-            <option value="2">option02</option>
-            <option value="3">option03</option>
+        <input type="text" id="todo-input" placeholder="Add a new task" class="TodoInput">
+        <select name="taskSection" id="taskSection" class="TodoOption">
+            <option value="1">My Day</option>
+            <option value="2">Work</option>
+            <option value="3">Education</option>
         </select>
         <button type="submit">Add Tack</button>
     </form>
@@ -25,18 +25,21 @@
 </div>
 <div name="div" id="divsection">
     <div id="div01">
+        <h2>My Day</h2>
         <ul id="todo-list00">
 
         </ul>
 
     </div>
     <div name="div" id="div02">
+        <h2>Work</h2>
         <ul id="todo-list01">
 
         </ul>
 
     </div>
     <div name="div" id="div03">
+        <h2>Education</h2>
         <ul id="todo-list02">
 
         </ul>
@@ -45,5 +48,6 @@
     </div>
 </div>  
     <script src="scrip.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
