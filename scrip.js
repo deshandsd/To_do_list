@@ -1,14 +1,10 @@
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById("todo-input");
-
-
-// const todoList01 = document.getElementById('todo-list00');
-// const todoList02 = document.getElementById('todo-list01');
-// const todoList03 = document.getElementById('todo-list02');
+const ItemLength = document.getElementsByName("div");
 
 const todoLists = [];
 
-for (let index = 0; index < 3 ; index++) {
+for (let index = 0; index < ItemLength.length ; index++) {
 
     const todolistId  = `todo-list0${index}`;
     todoLists[index] = document.getElementById(todolistId); 
