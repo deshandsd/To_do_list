@@ -80,7 +80,12 @@ todoForm.addEventListener('submit', function(event){
         alert('Please enter a task');
         return;  // if the input is empty return alert mg
     }
-    todoInput.value = ''; // clear the input after adding the  task 
+    todoInput.value = '';
+    
+    if (!taskSectionNumber){
+        alert('please add a new section')
+        return;
+    }// clear the input after adding the  task 
 
     addTask(newTask, taskSectionNumber); // add the task to the list
 });
