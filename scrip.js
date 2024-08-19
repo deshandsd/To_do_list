@@ -1,40 +1,8 @@
-const todoForm = document.getElementById('todo-form');
-const todoInput = document.getElementById("todo-input");
-const todoLists = document.getElementsByName("divUL");
-
-console.log(todoLists);
-
-/*const todoLists = [];
-
-for (let index = 0; index < ItemLength.length ; index++) {
-
-    const todolistId  = `todo-list0${index}`;
-    todoLists[index] = document.getElementById(todolistId); 
-} */
-//console.log(todoLists);
-
+// -----------------------------------------------Adding new Div section and updating the select option ------------------------------
 const sectionForm = document.getElementById('section-form');
 const sectionInput = document.getElementById('sectoinInputName');
 const sectionDiv = document.getElementById('divsection');
 const taskSection = document.getElementById('taskSection');
-
-todoForm.addEventListener('submit', function(event){
-    event.preventDefault() // prevent refreshing the form after submitting
-
-    const taskSectionNumber = document.getElementById('taskSection').value;
-
-    const newTask = todoInput.value;
-    //console.log(newTask); // asign the input value to the newtask
-
-    if (newTask == ''){
-        alert('Please enter a task');
-        return;  // if the input is empty return alert mg
-    }
-    todoInput.value = ''; // clear the input after adding the  task 
-
-    addTask(newTask, taskSectionNumber); // add the task to the list
-});
-
 
 
 sectionForm.addEventListener('submit', function(event){
@@ -53,10 +21,10 @@ sectionForm.addEventListener('submit', function(event){
 });
 
 function AddSection(name){
-    console.log(name);
+    //console.log(name);
 
     let sectionCount = todoLists.length + 1;
-    console.log(sectionCount);
+    //console.log(sectionCount);
                                                 // new fuction to add new div section to add tasks
     
     const newoption = document.createElement('option');
@@ -80,7 +48,43 @@ function AddSection(name){
 
 
 
-// function to create a new li element and text node
+// ---------------------------------------------------- function to create a new li element and text node ------------------------------------------
+
+const todoForm = document.getElementById('todo-form');
+const todoInput = document.getElementById("todo-input");
+const todoLists = document.getElementsByName("divUL");
+
+console.log(todoLists);
+
+/*const todoLists = [];
+
+for (let index = 0; index < ItemLength.length ; index++) {
+
+    const todolistId  = `todo-list0${index}`;
+    todoLists[index] = document.getElementById(todolistId); 
+} */
+//console.log(todoLists);
+
+
+
+todoForm.addEventListener('submit', function(event){
+    event.preventDefault() // prevent refreshing the form after submitting
+
+    const taskSectionNumber = document.getElementById('taskSection').value;
+
+    const newTask = todoInput.value;
+    //console.log(newTask); // asign the input value to the newtask
+
+    if (newTask == ''){
+        alert('Please enter a task');
+        return;  // if the input is empty return alert mg
+    }
+    todoInput.value = ''; // clear the input after adding the  task 
+
+    addTask(newTask, taskSectionNumber); // add the task to the list
+});
+
+
 
 function addTask(task,number){
     const listItem = document.createElement('li');  // create a list item
