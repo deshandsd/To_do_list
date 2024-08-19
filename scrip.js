@@ -1,4 +1,5 @@
 // -----------------------------------------------Adding new Div section and updating the select option ------------------------------
+
 const sectionForm = document.getElementById('section-form');
 const sectionInput = document.getElementById('sectoinInputName');
 const sectionDiv = document.getElementById('divsection');
