@@ -1,21 +1,22 @@
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById("todo-input");
-const ItemLength = document.getElementsByName("div");
+const todoLists = document.getElementsByName("divUL");
 
-const todoLists = [];
+console.log(todoLists);
+
+/*const todoLists = [];
 
 for (let index = 0; index < ItemLength.length ; index++) {
 
     const todolistId  = `todo-list0${index}`;
     todoLists[index] = document.getElementById(todolistId); 
-}
+} */
+//console.log(todoLists);
 
-console.log(todoLists.length);
-
-// const sectionForm = document.getElementById('section-form');
-// const sectionInput = document.getElementById('sectoinInputName');
-// const sectionDiv = document.getElementById('divsection');
-// const taskSection = document.getElementById('taskSection');
+const sectionForm = document.getElementById('section-form');
+const sectionInput = document.getElementById('sectoinInputName');
+const sectionDiv = document.getElementById('divsection');
+const taskSection = document.getElementById('taskSection');
 
 todoForm.addEventListener('submit', function(event){
     event.preventDefault() // prevent refreshing the form after submitting
@@ -36,39 +37,44 @@ todoForm.addEventListener('submit', function(event){
 
 
 
-// sectionForm.addEventListener('submit', function(event){
-//     event.preventDefault();
+sectionForm.addEventListener('submit', function(event){
+    event.preventDefault();
     
-//     const sectionName =  sectionInput.value;
+    const sectionName =  sectionInput.value;
 
-//     if (sectionName == ''){
-//         alert('Please enter a section name');
-//         return;  
-//     }
-//     sectionInput.value = '';
+    if (sectionName == ''){
+        alert('Please enter a section name');
+        return;  
+    }
+    sectionInput.value = '';
     
-//     AddSection(sectionName);
+    AddSection(sectionName);
 
-// });
+});
 
-// function AddSection(name){
-//     console.log(name);
+function AddSection(name){
+    console.log(name);
 
-//     let sectionCount = 3;
-
-//     const newSectionId = `${sectionCount}`;
-//     sectionCount++;                                                 new fuction to add new div section to add tasks
+    let sectionCount = todoLists.length + 1;
+    console.log(sectionCount);
+                                                // new fuction to add new div section to add tasks
     
-//     const newoption = document.createElement('option');
-//     newoption.textContent = name;
-//     newoption.value = newSectionId;
-//     taskSection.appendChild(newoption);
+    const newoption = document.createElement('option');
+    newoption.textContent = name;
+    newoption.value = sectionCount;
+    taskSection.appendChild(newoption);
 
 
-//     const newSection = document.createElement('div');
-//     sectionDiv.appendChild(newSection); 
+    const newSection = document.createElement('div');
+    const newUl = document.createElement("ul");
+    const header = document.createElement("h2")
+    header.textContent = name;
+    newSection.appendChild(header);
+    newUl.setAttribute('name','divUL')
+    newSection.appendChild(newUl);
+    sectionDiv.appendChild(newSection); 
 
-
+};
 
 
 
@@ -169,7 +175,6 @@ function addTask(task,number){
             textInput.type = 'text';
             textInput.value = taskText.textContent;
             listItem.insertBefore(textInput, taskText);  // inserting the input where the task text is located
-
             listItem.removeChild(taskText);
             listItem.classList.add('editing');
             editButton.textContent = 'save';
@@ -177,6 +182,7 @@ function addTask(task,number){
     });
 
 };
+
 
 
 
