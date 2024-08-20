@@ -35,13 +35,25 @@ function AddSection(name){
 
 
     const newSection = document.createElement('div');
+    const Tsectoin = document.createElement('span');
+    const header = document.createElement("h2");
+    const sectionButton = document.createElement('button')
+    sectionButton.textContent = "Delete";
     const newUl = document.createElement("ul");
-    const header = document.createElement("h2")
+    Tsectoin.setAttribute('class','Tsection');
+    Tsectoin.appendChild(header);
+    Tsectoin.appendChild(sectionButton);
     header.textContent = name;
-    newSection.appendChild(header);
+    newSection.appendChild(Tsectoin);
     newUl.setAttribute('name','divUL')
     newSection.appendChild(newUl);
     sectionDiv.appendChild(newSection); 
+
+
+    sectionButton.addEventListener("click",() =>{
+        sectionDiv.removeChild(newSection);
+        taskSection.removeChild(newoption);
+    });
 
 };
 
@@ -146,15 +158,18 @@ function addTask(task,number){
     todoList.insertBefore(listItem, todoList.firstChild); // listItem.insertAdjacentElement('afterbegin', listItem);
     });
 
-    let todoList;
+    let todoList = todoLists[number -1];
+    //console.log(number);
+    
+    // console.log(todoList);
 
-    if(number == "1"){
-        todoList = todoLists[0];
-    }else if(number == "2"){
-        todoList = todoLists[1];
-    }else if(number == "3"){
-        todoList = todoLists[2];
-    }
+    // if(number == "1"){
+    //     todoList = todoLists[0];
+    // }else if(number == "2"){
+    //     todoList = todoLists[1];
+    // }else if(number == "3"){
+    //     todoList = todoLists[2];
+    // }
 
     todoList.appendChild(listItem);
 
